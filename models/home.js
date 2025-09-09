@@ -18,8 +18,8 @@ module.exports = class Home {
 
     save() {
       this.id = Math.random().toString();
-     Home.fetchAll((registeredHomes) =>{ 
-        registeredHomes.push(this);
+      Home.fetchAll((registeredHomes) =>{ 
+      registeredHomes.push(this);
       const homepath = path.join(rootDir, 'data' , 'homes.json' )
       fs.writeFile(homepath , JSON.stringify(registeredHomes), (err) => {
         console.log("data is fetched", err);
